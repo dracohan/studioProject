@@ -1,8 +1,15 @@
 # Built application files
 *.apk
 *.ap_
+<<<<<<< HEAD
+*idea/*
+*/.idea/*
+
+# Files for the Dalvik VM
+=======
 #
 # # Files for the Dalvik VM
+>>>>>>> 3796c50772a2d7ea9782453f9fe397d9d820453c
 *.dex
 #
 # # Java class files
