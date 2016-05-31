@@ -55,7 +55,7 @@ public class FirstActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Log.e("FirstActivity", "Send implicit Intent");
-				Intent intent = new Intent("com.han.jm.activitytest.ACTION_START");
+				Intent intent = new Intent("com.han.jm.activitytest.ACTION_STARTA");
 				String data = "Hello SecondActivity";
 				intent.putExtra("extra_data", data);
 				startActivityForResult(intent, 1);
