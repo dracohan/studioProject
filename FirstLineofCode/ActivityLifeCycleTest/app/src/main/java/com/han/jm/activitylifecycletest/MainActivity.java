@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
+
 		if(savedInstanceState != null){
 			String tmpData = savedInstanceState.getString("data_key");
 			Log.d(TAG, tmpData);
