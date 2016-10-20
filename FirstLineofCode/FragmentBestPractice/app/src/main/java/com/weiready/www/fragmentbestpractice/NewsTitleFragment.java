@@ -1,7 +1,6 @@
 package com.weiready.www.fragmentbestpractice;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsTitleFragment extends Fragment implements OnItemClickListener {
+public class NewsTitleFragment extends BaseFragment implements OnItemClickListener {
 
 	private ListView newsTitleListView;
 
@@ -33,6 +32,7 @@ public class NewsTitleFragment extends Fragment implements OnItemClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		super.onCreateView(inflater,container,savedInstanceState);
 		View view = inflater
 				.inflate(R.layout.news_title_frag, container, false);
 		newsTitleListView = (ListView) view

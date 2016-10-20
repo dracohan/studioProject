@@ -14,10 +14,9 @@ public class FirstActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedinstanceState){
 		super.onCreate(savedinstanceState);
-		Log.d("FirstActivity", this.toString());
-		Log.d("FirstActivity", "Task id is " + getTaskId());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.first_layout);
+
 		Button button1 = (Button) findViewById(R.id.button_1);
 		button1.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -50,11 +49,15 @@ public class FirstActivity extends BaseActivity {
 				//get result
 				//Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
 				//startActivityForResult(intent, 1);
-
-
 			}
 		});
-
+		Button button2 = (Button) findViewById(R.id.button_2);
+		button2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				ActivityCollector.finishAll();
+			}
+		});
 	}
 
 	@Override
@@ -69,41 +72,4 @@ public class FirstActivity extends BaseActivity {
 			default:
 		}
 	}
-
-	@Override
-	protected void onRestart() {
-		super.onRestart();
-		Log.d("FirstActivity", "onRestart");
-	}
-
-	@Override
-	protected void onStart() {
-		super.onStart();
-		Log.d("FirstActivity", "onStart");
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		Log.d("FirstActivity", "onResume");
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		Log.d("FirstActivity", "onPause");
-	}
-
-	@Override
-	protected void onStop() {
-		super.onStop();
-		Log.d("FirstActivity", "onStop");
-	}
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		Log.d("FirstActivity", "onDestroy");
-	}
-
-
 }

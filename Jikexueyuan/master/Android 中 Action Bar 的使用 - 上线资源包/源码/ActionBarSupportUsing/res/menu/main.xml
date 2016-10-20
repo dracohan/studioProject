@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jikexueyuan="http://schemas.android.com/apk/res-auto" >
+
+  <item 
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title="@string/search"
+        jikexueyuan:showAsAction="ifRoom"
+        />
+
+</menu>

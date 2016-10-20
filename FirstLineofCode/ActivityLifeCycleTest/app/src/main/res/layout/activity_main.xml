@@ -14,8 +14,14 @@
             android:layout_height="wrap_content"
             android:text="Start Dialog Activity"/>
 
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Application启动activity"
+            android:id="@+id/btnStartAtybyContext"/>
+
     <EditText
-            android:id="@+id/edit_text"
+
             android:layout_height="match_parent"
             android:layout_width="match_parent"/>
 </LinearLayout>

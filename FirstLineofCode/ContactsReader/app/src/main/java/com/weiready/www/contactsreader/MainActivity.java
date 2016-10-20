@@ -21,6 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 	// The ListView
 	private ListView lstNames;
+	private List<String> contacts;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
 			//After this point you wait for callback in onRequestPermissionsResult(int, String[], int[]) overriden method
 		} else {
 			// Android version is lesser than 6.0 or the permission is already granted.
-			List<String> contacts = getContactNames();
+			contacts = getContactNames();
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contacts);
 			lstNames.setAdapter(adapter);
+
 		}
 	}
 

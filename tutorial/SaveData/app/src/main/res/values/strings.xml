@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SaveData</string>
+    <string name="save_share_preference">Save to SharedPreference</string>
+    <string name="dial">Dial</string>
+    <string name="Location">Location</string>
+    <string name="save_to_file">Save a Internal File Directory</string>
+</resources>

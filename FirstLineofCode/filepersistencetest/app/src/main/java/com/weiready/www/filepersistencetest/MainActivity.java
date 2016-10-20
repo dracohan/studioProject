@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.*;
@@ -26,20 +27,35 @@ public class MainActivity extends Activity {
 		//String inputText = "";
 		if (!TextUtils.isEmpty(inputText)) {
 			edit.setText(inputText);
-			edit.setSelection(inputText.length());
+			//edit.setSelection(inputText.length());
 			Toast.makeText(this, "Restoring succeeded", Toast.LENGTH_SHORT).show();
 		}
 
-		context = getApplicationContext();
-		String dir = context.getFilesDir().toString();
-		Log.d(TAG, dir);
+		//listing all the file paths
+		PathsTracker pathsTracker = PathsTracker.getInstance();
+		pathsTracker.setPath("Internal Storage path: " ,
+				getFilesDir().toString());
+		pathsTracker.setPath("Internal Cache Storage path: " ,
+				getCacheDir().toString());
+		pathsTracker.setPath("External file path: " ,
+				Environment.getExternalStorageDirectory().toString());
+		pathsTracker.setPath("External picture file path: " ,
+				Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString());
+		Utils.printPaths((TextView) findViewById(R.id.file_path));
 
-		String state = Environment.getExternalStorageState();
-		Log.d(TAG, state);
 
-		File file = new File(Environment.getExternalStoragePublicDirectory(
-				Environment.DIRECTORY_PICTURES), "aaa");
-		Log.d(TAG, file.toString());
+
+
+//		context = getApplicationContext();
+//		String dir = context.getFilesDir().toString();
+//		Log.d(TAG, dir);
+//
+//		String state = Environment.getExternalStorageState();
+//		Log.d(TAG, state);
+//
+//		File file = new File(Environment.getExternalStoragePublicDirectory(
+//				Environment.DIRECTORY_PICTURES), "aaa");
+//		Log.d(TAG, file.toString());
 	}
 
 	@Override
@@ -57,9 +73,6 @@ public class MainActivity extends Activity {
 			out = openFileOutput("data", Context.MODE_APPEND);
 			writer = new BufferedWriter(new OutputStreamWriter(out));
 			writer.write(inputText);
-
-
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -78,6 +91,7 @@ public class MainActivity extends Activity {
 		BufferedReader reader = null;
 		StringBuilder content = new StringBuilder();
 		try {
+			//auto check "/data/data/<package name>/files"
 			in = openFileInput("data");
 			reader = new BufferedReader(new InputStreamReader(in));
 			String line = "";

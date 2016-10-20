@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LaunchMode</string>
+    <string name="mainactivity">启动MainActivity</string>
+</resources>

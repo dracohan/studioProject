@@ -1,10 +1,9 @@
 package com.weiready.www.fragmentbestpractice;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

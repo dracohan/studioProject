@@ -39,10 +39,9 @@ public class MainActivity extends Activity {
 				int age = pref.getInt("age", 0);
 				boolean married = pref.getBoolean("married", false);
 				Log.d("MainActivity", "name is " + name);
-				Log.d("MainActivity", "age is " + age);
+				Log.d("MainActivity", "2age is " + age);
 				Log.d("MainActivity", "married is " + married);
 			}
 		});
 	}
-
 }

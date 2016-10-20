@@ -13,6 +13,7 @@ public class TitleLayout extends LinearLayout {
 
 	public TitleLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		//dynamic load layout file
 		LayoutInflater.from(context).inflate(R.layout.title, this);
 		Button titleBack = (Button) findViewById(R.id.title_back);
 		Button titleEdit = (Button) findViewById(R.id.title_edit);
